@@ -1,8 +1,15 @@
-import ListGroup from './ListGroup';
-
+import 'bootstrap/dist/css/bootstrap.css' 
+import Layout from './Components/Layout';
 
 function App(){
-  return <div>  <ListGroup/> </div>
+  return ( 
+  <>
+     <Layout/>
+  </>
+  );
 }
 
-export default App;
+
+
+export default App; 
+
