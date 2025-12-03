@@ -1,7 +1,7 @@
 function Footer(){
   return (
     <>
-  <footer className="footer bg-light text-dark py-3 fixed-bottom">
+  <footer className="footer bg-light text-dark py-2 mx-2 fixed-bottom ">
   <div className="container d-flex justify-content-between align-items-center">
 
     <div className="text-start">
