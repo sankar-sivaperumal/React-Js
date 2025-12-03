@@ -1,15 +1,26 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './Navbar';
+import Home from './Header';
+import Gallery from './Gallery';
+import Contact from './Contact';
+import Footer from './Footer';
 
-import Navbar from "./Navbar";
-import Footer from "./Footer";
-import Gallery from "./Gallery";
 
-export default function Layout() {
+function Main() {
   return (
-    <>
+    <Router>
       <Navbar />
-      <Gallery />
+      <div className="container mt-3">
+        <Routes>
+          <Route path="/Header" element={<Home />} />
+          <Route path="/Gallery" element={<Gallery />} />
+          <Route path="/Contact" element={<Contact />} />
+        </Routes>
+      </div>
+      
       <Footer />
-    </>
+    </Router>
   );
 }
 
+export default Main;
