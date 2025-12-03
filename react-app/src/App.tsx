@@ -1,10 +1,10 @@
 import 'bootstrap/dist/css/bootstrap.css' 
-import Layout from './Components/Layout';
+import Main from './Components/Layout';
 
 function App(){
   return ( 
   <>
-     <Layout/>
+   <Main/>
   </>
   );
 }
