@@ -10,13 +10,7 @@ import { Link } from 'react-router-dom';
           <li><Link className="nav-link" to="/Gallery">Gallery</Link></li>   
           <li><Link className="nav-link" to="/Contact">Contact</Link></li>
         </ul>
-
-        <form className="d-flex">
-         <input className="form-control me-2" type="text" placeholder="Search"></input>
-         <button className="btn btn-primary" type="button">Search</button>
-
-        </form>
-     </div>
+      </div>
     </nav>
   </>
   );
