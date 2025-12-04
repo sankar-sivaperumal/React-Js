@@ -5,8 +5,10 @@ import Butterfly from '../assets/Butterfly.jpg';
 import Bird from '../assets/Bird.jpg'; 
 import Waterfall from '../assets/waterfall.jpeg'; 
 
-
 export default function Gallery() {
+  // const galleryImages = [
+  //   {name,}
+  // ]
   return (
     <>
       <form className="d-flex justify-content-right position-absolute" style={{ right: '10px', top: '10px', width: 'auto' }}> 
@@ -103,3 +105,4 @@ export default function Gallery() {
     </>
   );
 }
+ 
