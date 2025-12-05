@@ -1,9 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './Navbar';
-import Gallery from './Gallery';
+import Gallerys from './Gallery';
 import Contact from './Contact';
 import Footer from './Footer';
 import Home from './home';
+
 
 
 
@@ -15,7 +16,7 @@ function Main() {
       <div className="container mt-3">
         <Routes>
           <Route path="/Header" element={<Home />} />
-          <Route path="/Gallery" element={<Gallery/>} />
+          <Route path="/Gallery" element={<Gallerys />} />
           <Route path="/Contact" element={<Contact />} />
         </Routes>
       </div>
