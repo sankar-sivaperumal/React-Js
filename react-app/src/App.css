@@ -1,68 +1,54 @@
-/* .card {
-    background-color: azure;
-    width: 200px; 
-    height: 300px; 
-    border: 1px solid black;
-    border-radius: 5px;
-    font-family: sans-serif;
-    margin: 10px;
-    padding: 10px; 
-    text-align: center; 
-    display: inline-block;
-    vertical-align: top; 
-    box-sizing: border-box; 
-} */
-
-/* .card img {
-    width: 100%;    
-    max-height: 150px;
-    object-fit: cover; 
-    display: block;
-    margin: 0 auto;
-    border-radius: 5px;
-} */
-/* Footer container */
-/* .footer {
-    font-family: sans-serif;
-    text-align: center;
-    padding: 20px 0; 
-    position: fixed; 
-    bottom: 0;
-    width: 100%; 
-    background-color:azure; 
-    color: black; 
-  
-} */
-
-
-/* .gallery-card {
-  height: 400px; 
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.text-truncate-description {
+  display: -webkit-box;        
+  display: box;               
+  -webkit-box-orient: vertical;
+  box-orient: vertical;        
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-clamp: 3;               
+  -webkit-line-clamp: 3;       
+  white-space: normal;         
 }
 
-.card-img-top {
-  height: 200px; 
-  object-fit: cover; 
+/* Table wrapper to handle overflow */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto; 
+  margin-bottom: 1rem; 
+} 
+
+  .table-wrapper {
+  overflow-x: auto;
+  overflow-y: auto;
+  max-height: 70vh;
+  width: 100%;
+  display: block;
+}
+ 
+ table {
+  table-layout: fixed;
+  word-wrap: break-word;
 }
 
-.card-body {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 15px;
+.pagination-wrapper {
+  position: sticky;
+  bottom: 0;
+  background: white;
+  padding: 10px;
+  z-index: 10;
+  flex-wrap: wrap;
 }
 
-.card-title {
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-bottom: 10px;
+.table-container {
+  width: 100%;
+  overflow-x: auto;   
+  overflow-y: visible;
+  display: block;
 }
- */
 
-
-
-
-
+table {
+  table-layout: fixed;
+  width: 100%;
+  word-wrap: break-word;
+}
+ 
