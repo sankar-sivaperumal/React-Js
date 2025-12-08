@@ -4,6 +4,7 @@ import Gallerys from './Gallery';
 import Contact from './Contact';
 import Footer from './Footer';
 import Home from './home';
+import JsonTable from './jsondata';
 
 
 
@@ -18,8 +19,10 @@ function Main() {
           <Route path="/Header" element={<Home />} />
           <Route path="/Gallery" element={<Gallerys />} />
           <Route path="/Contact" element={<Contact />} />
+          <Route path="/JsonTable" element={<JsonTable />} />
         </Routes>
       </div>
+      
       <Footer />
     </Router>
   );
