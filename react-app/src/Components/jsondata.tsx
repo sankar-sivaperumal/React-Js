@@ -22,7 +22,6 @@ export default function JsonDataTable() {
   // Fetch with cache
   useEffect(() => {
     async function loadData() {
-      // If cached — use it, do NOT fetch again
       if (cache[page]) {
         setData(cache[page]);
         return;
