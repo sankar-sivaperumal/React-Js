@@ -165,8 +165,9 @@ export default function Home() {
   );
 }  */ 
 
-//if reload that can be retain again
-/* import { useEffect, useState } from "react";
+//if  not reload that can be retain again
+
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
@@ -189,7 +190,6 @@ export default function Home() {
   const [newImageFileName, setNewImageFileName] = useState<string>("");
   const navigate = useNavigate();
 
-  // Persist gallery to localStorage
   useEffect(() => {
     localStorage.setItem("userGalleryData", JSON.stringify(gallery));
   }, [gallery]);
@@ -197,7 +197,7 @@ export default function Home() {
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
-      setNewImageFileName(file.name); // store file name
+      setNewImageFileName(file.name); 
       const reader = new FileReader();
       reader.onloadend = () => setNewImageFile(reader.result);
       reader.readAsDataURL(file);
@@ -219,7 +219,7 @@ export default function Home() {
       }
     ]);
 
-    // Clear input state **only after saving**
+    
     setNewImageName("");
     setNewImageDescr("");
     setNewImageFile(null);
@@ -230,7 +230,6 @@ export default function Home() {
   };
 
   const handleCancel = () => {
-    // Do not reset inputs here, retain old input
     setShowModal(false);
   };
 
@@ -289,7 +288,7 @@ export default function Home() {
       )}
     </>
   );
-} */
+}
 
 
 
