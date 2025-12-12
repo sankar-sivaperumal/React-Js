@@ -68,7 +68,6 @@ const imageSlice = createSlice({
   reducers: {
     addImage: (state, action: PayloadAction<Image>) => {
       state.images.push(action.payload);
-      saveImagesToStorage(state.images);
     },
 
     deleteImage: (state, action: PayloadAction<string>) => {
