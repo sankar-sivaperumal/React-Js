@@ -1,9 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './Navbar';  
-import Gallery from '../Components/testing tools/gallery';  
+import Gallery from './Redux toolkit/gallery';  
 import Contact from './Contact';  
 import Footer from './Footer';  
-import Home from '../Components/testing tools/home';  
+import Home from './Redux toolkit/home';  
 import JsonTable from './jsondata';  
 
 export default function Main() {
