@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+/*  import React, { useState, useEffect } from "react";
+ import { useDispatch, useSelector } from "react-redux";
 import { deleteImage, editImage } from "./imageSlice";
 import type { RootState } from "./store";
 import Swal from "sweetalert2";
@@ -74,7 +74,7 @@ const getImagesFromIndexedDB = async (): Promise<any[]> => {
       reject(error);
     }
   });
-};
+}; 
 
 const Gallery: React.FC = () => {
   const dispatch = useDispatch();
@@ -145,6 +145,100 @@ const Gallery: React.FC = () => {
   return (
     <div className="container mt-3">
       <div className="row">
+        {images.map((image, index) => (
+          <div className="col-3 mb-5 text-center" key={image.id}>
+            <div className="card" style={{ width: "100%", height: "380px" }}>
+              <img src={image.imageData || ""} className="card-img-top" alt={image.name} />
+              <div className="card-body">
+                <h3 className="card-title">{image.name}</h3>
+                <p className="card-text text-truncate" title={image.description}>
+                  {image.description}
+                </p>
+                <button className="btn btn-info mt-2 me-2" onClick={() => handleEdit(index)}>
+                  Edit
+                </button>
+                <button className="btn btn-danger mt-2" onClick={() => handleDelete(image.id)}>
+                  Delete
+                </button>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {editIndex !== null && (
+        <ImageModal
+          showModal={showModal}
+          onClose={() => setShowModal(false)}
+          onSave={handleSaveEdit}
+          initialData={images[editIndex]}
+        />
+      )}
+    </div>
+  );
+};
+
+export default Gallery;
+    */
+
+
+
+
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { deleteImage, editImage } from "./imageSlice";
+import type { RootState } from "./store";
+import Swal from "sweetalert2";
+import ImageModal from "./imagemodel";
+
+const Gallery: React.FC = () => {
+  const dispatch = useDispatch();
+  const images = useSelector((state: RootState) => state.images.images);
+
+  const [showModal, setShowModal] = useState(false);
+  const [editIndex, setEditIndex] = useState<number | null>(null);
+
+  const handleEdit = (index: number) => {
+    setEditIndex(index);
+    setShowModal(true);
+  };
+
+  const handleSaveEdit = (updatedData: {
+    name: string;
+    description: string;
+    fileName: string;
+    imageData: string;
+  }) => {
+    const updatedImage = {
+      id: images[editIndex!].id,
+      ...updatedData,
+    };
+
+    dispatch(editImage(updatedImage));
+    setShowModal(false);
+    setEditIndex(null);
+  };
+
+  const handleDelete = (id: string) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Yes, delete it!",
+      cancelButtonText: "Cancel",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        dispatch(deleteImage(id));
+        Swal.fire("Deleted!", "Your image has been deleted.", "success");
+      }
+    });
+  };
+
+  return (
+    <div className="container mt-3">
+      <div className="row">
+        <h1 style={{ fontFamily: "Inter", textAlign: "center" }}>Gallery</h1>
         {images.map((image, index) => (
           <div className="col-3 mb-5 text-center" key={image.id}>
             <div className="card" style={{ width: "100%", height: "380px" }}>
